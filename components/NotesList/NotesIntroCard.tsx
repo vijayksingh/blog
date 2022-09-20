@@ -1,5 +1,13 @@
-function NotesIntroCard() {
-    return ( <h1>This is notes intro card</h1> );
+import styles from '../NotesList/NotesIntroCard.module.scss';
+
+function NotesIntroCard({ children }) {
+  return (
+    <>
+    <div className={styles.notesCardContainer}>
+        { children }
+    </div>
+    </>
+  );
 }
 
 export default NotesIntroCard;
