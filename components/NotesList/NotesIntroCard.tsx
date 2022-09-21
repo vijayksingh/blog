@@ -1,13 +1,12 @@
-import styles from '../NotesList/NotesIntroCard.module.scss';
+import { ReactNode } from 'react'
+import styles from '../NotesList/NotesIntroCard.module.scss'
 
-function NotesIntroCard({ children }) {
+function NotesIntroCard({ children }: { children: ReactNode }) {
   return (
     <>
-    <div className={styles.notesCardContainer}>
-        { children }
-    </div>
+      <div className={styles.notesCardContainer}>{children}</div>
     </>
-  );
+  )
 }
 
-export default NotesIntroCard;
+export default NotesIntroCard
