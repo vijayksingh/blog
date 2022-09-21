@@ -1,7 +1,7 @@
-import NotesIntroCard from "../components/NotesList/NotesIntroCard";
-import NotesIntroCardHeading from "../components/NotesList/NotesIntroCardHeading";
-import NotesIntroCardSummary from "../components/NotesList/NotesIntroCardSummary";
-import NotesIntroCardTag from "../components/NotesList/NotesIntroCardTag";
+import NotesIntroCard from '../components/NotesList/NotesIntroCard'
+import NotesIntroCardHeading from '../components/NotesList/NotesIntroCardHeading'
+import NotesIntroCardSummary from '../components/NotesList/NotesIntroCardSummary'
+import NotesIntroCardTag from '../components/NotesList/NotesIntroCardTag'
 
 function Test() {
   return (
@@ -22,7 +22,7 @@ function Test() {
         <NotesIntroCardTag>#typescript</NotesIntroCardTag>
       </NotesIntroCard>
     </div>
-  );
+  )
 }
 
-export default Test;
+export default Test
