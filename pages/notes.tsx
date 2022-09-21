@@ -8,6 +8,7 @@ export interface NotesList {
 }
 
 function getNotesList(): NotesList[] {
+  // returning example notes list for now
   return [  
     {
       heading: 'Typescript and Set Theory',
