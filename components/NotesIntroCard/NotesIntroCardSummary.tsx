@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import styles from '../NotesList/NotesIntroCard.module.scss'
+import styles from '../NotesIntroCard/NotesIntroCard.module.scss'
 
 function NotesIntroCardSummary({ children }: { children: ReactNode }) {
   return (
