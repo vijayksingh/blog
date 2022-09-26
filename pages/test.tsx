@@ -1,7 +1,9 @@
-import NotesIntroCard from '../components/NotesList/NotesIntroCard'
-import NotesIntroCardHeading from '../components/NotesList/NotesIntroCardHeading'
-import NotesIntroCardSummary from '../components/NotesList/NotesIntroCardSummary'
-import NotesIntroCardTag from '../components/NotesList/NotesIntroCardTag'
+import NavBarCard from "../components/Layout/NavBarCard/NavBarCard"
+import NotesIntroCard from "../components/NotesIntroCard/NotesIntroCard"
+import NotesIntroCardHeading from "../components/NotesIntroCard/NotesIntroCardHeading"
+import NotesIntroCardSummary from "../components/NotesIntroCard/NotesIntroCardSummary"
+import NotesIntroCardTag from "../components/NotesIntroCard/NotesIntroCardTag"
+import homeSVG from '../public/home.svg';
 
 function Test() {
   return (
@@ -21,6 +23,14 @@ function Test() {
         </NotesIntroCardSummary>
         <NotesIntroCardTag>#typescript</NotesIntroCardTag>
       </NotesIntroCard>
+      <br />
+      <br />
+      <h1>Nav bar cards</h1>
+      <NavBarCard items={{
+        icon: homeSVG,
+        name: 'Test',
+        route: '',
+      }}></NavBarCard>
     </div>
   )
 }
