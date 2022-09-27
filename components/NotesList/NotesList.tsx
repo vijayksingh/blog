@@ -12,16 +12,19 @@ function NotesList({ notes }: { notes: NotesList[] }) {
                 Notes
             </div>
             <div className="notes-cards">
-            { notes.map((note) => (
-                    <NotesIntroCard>
-                    <NotesIntroCardHeading>{note.heading}</NotesIntroCardHeading>
-                    <NotesIntroCardSummary>
-                       {note.summary}
-                    </NotesIntroCardSummary>
-                    <NotesIntroCardTag>#{note.tag}</NotesIntroCardTag>
-                </NotesIntroCard>
-            )) }
-            
+                {notes.map((note, index) => (
+                    <div key={index}>
+                        <NotesIntroCard>
+                            <NotesIntroCardHeading>{note.heading}</NotesIntroCardHeading>
+                            <NotesIntroCardSummary>
+                                {note.summary}
+                            </NotesIntroCardSummary>
+                            <NotesIntroCardTag>#{note.tag}</NotesIntroCardTag>
+                        </NotesIntroCard>
+                    </div>
+
+                ))}
+
             </div>
         </div>
     </>);
