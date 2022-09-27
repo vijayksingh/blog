@@ -1,40 +1,61 @@
 import Image from 'next/image';
-import homeSVG from '../../../public/home.svg';
+import Link from 'next/link';
+import { ReactElement } from 'react';
+import externalLinkSVG from '../../../public/external-link.svg';
+import { NavBarSections } from '../NavBar';
 import styles from '../NavBarCard/NavBarCard.module.scss';
 
-interface NavBarCardItems {
+export interface NavBarCardItems {
     icon: any;
     name: string;
 }
 
-interface NavBarRouteCard extends NavBarCardItems{
-    route: string;
+export interface NavBarRouteCard extends NavBarCardItems {
+    route?: string;
 }
 
-interface NavBarUrlCard extends NavBarCardItems{
-    url: string;
+export interface NavBarUrlCard extends NavBarCardItems {
+    url?: string;
 }
 
-export type NavBarCard = NavBarRouteCard | NavBarUrlCard;
+export type NavBarCardType = NavBarRouteCard & NavBarUrlCard;
 
-function NavBarCard({items}: {items: NavBarCard}) {
-    return ( <>
-        <div className={styles.navBarCardContainer}>
-            <div className={styles.navBarCardText}>
-            <span>
-                <Image src={items.icon} height={30} width={30}  />
-            </span>
-            <span>
-                {items.name}
-            </span>
+function NavBarCardLink({ items, children }: { items: NavBarCardType, children: ReactElement }) {
+    let link;
+    if (items?.route) {
+        return (
+            <Link href={items.route as string}>
+                {children}
+            </Link>
+        )
+    }
+    return (
+        <a href={items.url} target="_blank" rel="noreferrer">
+            {children}
+        </a>
+    )
+}
+
+function NavBarCard({ items }: { items: NavBarCardType }) {
+    return (<>
+        <NavBarCardLink items={items}>
+            <div className={styles.navBarCardContainer}>
+                <div className={styles.navBarCardText}>
+                    <span>
+                        <Image src={items.icon} height={30} width={30} alt='nav bar icon' />
+                    </span>
+                    <span>
+                        {items.name}
+                    </span>
+                </div>
+                <div className={styles.navBarCardUrl}>
+                    <span>
+                        <Image src={externalLinkSVG} height={30} width={30} alt='external link icon' />
+                    </span>
+                </div>
             </div>
-            <div className={styles.navBarCardUrl}>
-            <span>
-                Go
-            </span>
-            </div>
-        </div>
-    </> );
+        </NavBarCardLink>
+    </>);
 }
 
 export default NavBarCard;
